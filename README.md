@@ -1,5 +1,7 @@
 # Portfolio
 
+Built by **Danny Jordan**, with AI-assisted development via Claude Code.
+
 A production-style single-page application built with Next.js 15, React 19, and TypeScript. Demonstrates modern frontend engineering practices including strong typing, automated testing, CI/CD pipelines, and clean project structure.
 
 ## Tech Stack
@@ -174,3 +176,7 @@ None of this replaces quality gates. Every change still goes through:
 - Code review
 
 AI is a productivity tool, not a replacement for engineering judgment. The developer owns correctness, architecture, and quality.
+
+---
+
+Built by **Danny Jordan** | AI-assisted with [Claude Code](https://claude.ai)
