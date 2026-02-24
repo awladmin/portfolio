@@ -4,7 +4,7 @@ import { FEATURES } from '@/lib/constants';
 
 export function Features() {
   return (
-    <section id="features" className="py-20 px-6 bg-slate-50">
+    <section id="features" className="py-20 px-6 bg-slate-50 dark:bg-slate-900">
       <SectionHeading
         title="Features"
         subtitle="Everything you need to build and ship with confidence."
@@ -13,10 +13,10 @@ export function Features() {
         {FEATURES.map((feature) => (
           <Card key={feature.id}>
             <span className="text-3xl">{feature.icon}</span>
-            <h3 className="mt-4 text-lg font-semibold text-slate-900">
+            <h3 className="mt-4 text-lg font-semibold text-slate-900 dark:text-white">
               {feature.title}
             </h3>
-            <p className="mt-2 text-slate-600">{feature.description}</p>
+            <p className="mt-2 text-slate-600 dark:text-slate-300">{feature.description}</p>
           </Card>
         ))}
       </div>

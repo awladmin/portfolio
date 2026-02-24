@@ -10,7 +10,8 @@ A production-style single-page application built with Next.js 15, React 19, and 
 - **Language**: TypeScript 5
 - **UI**: React 19, Tailwind CSS
 - **Forms**: React Hook Form + Yup
-- **Testing**: Vitest, React Testing Library, Cypress
+- **Testing**: Vitest, React Testing Library, Cypress, cypress-axe
+- **Component Docs**: Storybook
 - **CI/CD**: GitHub Actions
 - **Deployment**: Vercel
 
@@ -38,6 +39,7 @@ cp .env.example .env.local
 | Variable | Description | Default |
 | --- | --- | --- |
 | `NEXT_PUBLIC_SITE_NAME` | Site name displayed across the UI | `Portfolio e.g` |
+| `NEXT_PUBLIC_SITE_URL` | Canonical site URL used for SEO metadata | `https://portfolio-sigma-rust-22.vercel.app` |
 | `REVALIDATE_API_KEY` | Secret key for the cache revalidation API (server-only) | — |
 
 ### Development
@@ -63,6 +65,8 @@ Open [http://localhost:3000](http://localhost:3000).
 | `pnpm cypress:open` | Open Cypress test runner |
 | `pnpm cypress:run` | Run Cypress headlessly |
 | `pnpm e2e` | Build, start server, run E2E tests |
+| `pnpm storybook` | Start Storybook dev server |
+| `pnpm build-storybook` | Build static Storybook site |
 
 ## Project Structure
 
@@ -73,6 +77,7 @@ src/
     api/revalidate/     On-demand cache revalidation endpoint
   components/           Shared UI and section components
     ui/                 Reusable primitive components (Button, Card, Input)
+      __stories__/      Storybook stories for UI components
   features/             Feature modules
     contact-form/       Contact form with React Hook Form + Yup
   lib/                  Constants and shared utilities
@@ -106,6 +111,28 @@ curl -X POST http://localhost:3000/api/revalidate \
 | 400 | Neither `path` nor `tag` provided |
 | 401 | Missing or invalid API key |
 
+## Features
+
+### Dark Mode
+
+Dark mode is supported via a `ThemeProvider` that reads from `localStorage` and falls back to `prefers-color-scheme`. An inline script in `<head>` sets the `dark` class before first paint to prevent a flash of unstyled content. A toggle button is fixed to the top-right corner.
+
+### SEO
+
+The layout includes comprehensive metadata: Open Graph, Twitter Cards, a canonical URL via `metadataBase`, and JSON-LD structured data (`WebSite` + `Person`). The theme color is set for mobile browsers.
+
+### Accessibility
+
+Accessibility is tested automatically via `cypress-axe`. E2E tests run `axe-core` against the full page, features section, contact form, and footer to catch violations.
+
+### Storybook
+
+UI components are documented in Storybook. Stories live alongside components in `__stories__/` directories. Run `pnpm storybook` to browse them locally.
+
+### Analytics (Placeholder)
+
+Commented-out imports for `@vercel/analytics` and `@vercel/speed-insights` are included in the layout, ready to enable when needed.
+
 ## Testing
 
 This project uses a layered testing approach:
@@ -115,6 +142,8 @@ This project uses a layered testing approach:
 **Integration tests** verify that the full page renders correctly with all sections composed together.
 
 **E2E tests** use Cypress to test the real user journey: visiting the homepage, verifying section visibility, filling in the contact form, and confirming the success state.
+
+**Accessibility tests** use `cypress-axe` to run automated a11y audits against key sections of the page.
 
 Run all unit and integration tests:
 
