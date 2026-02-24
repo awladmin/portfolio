@@ -36,6 +36,7 @@ cp .env.example .env.local
 | Variable | Description | Default |
 | --- | --- | --- |
 | `NEXT_PUBLIC_SITE_NAME` | Site name displayed across the UI | `Portfolio e.g` |
+| `REVALIDATE_API_KEY` | Secret key for the cache revalidation API (server-only) | — |
 
 ### Development
 
@@ -67,6 +68,7 @@ Open [http://localhost:3000](http://localhost:3000).
 src/
   app/                  Next.js App Router pages and API routes
     api/contact/        Contact form endpoint
+    api/revalidate/     On-demand cache revalidation endpoint
   components/           Shared UI and section components
     ui/                 Reusable primitive components (Button, Card, Input)
   features/             Feature modules
@@ -80,6 +82,27 @@ cypress/
 .github/
   workflows/            CI pipeline config
 ```
+
+## API Routes
+
+### `POST /api/revalidate`
+
+On-demand cache revalidation. Requires the `x-api-key` header to match the `REVALIDATE_API_KEY` env var.
+
+**Request body** (JSON): provide at least one of `path` or `tag`.
+
+```bash
+curl -X POST http://localhost:3000/api/revalidate \
+  -H "x-api-key: your-secret-key-here" \
+  -H "Content-Type: application/json" \
+  -d '{"path": "/", "tag": "posts"}'
+```
+
+| Status | Reason |
+| --- | --- |
+| 200 | Revalidation successful |
+| 400 | Neither `path` nor `tag` provided |
+| 401 | Missing or invalid API key |
 
 ## Testing
 
