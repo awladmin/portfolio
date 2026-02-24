@@ -7,7 +7,7 @@ on:
     branches: [main]
 
 env:
-  NEXT_PUBLIC_SITE_NAME: Acme Inc
+  NEXT_PUBLIC_SITE_NAME: Portfolio e.g
 
 jobs:
   quality:
@@ -16,24 +16,26 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - uses: pnpm/action-setup@v4
+
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: npm
+          cache: pnpm
 
-      - run: npm ci
+      - run: pnpm install --frozen-lockfile
 
       - name: Typecheck
-        run: npm run typecheck
+        run: pnpm typecheck
 
       - name: Lint
-        run: npm run lint
+        run: pnpm lint
 
       - name: Unit and Integration Tests
-        run: npm run test
+        run: pnpm test
 
       - name: Build
-        run: npm run build
+        run: pnpm build
 
   e2e:
     name: E2E Tests
@@ -42,17 +44,20 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - uses: pnpm/action-setup@v4
+
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: npm
+          cache: pnpm
 
-      - run: npm ci
+      - run: pnpm install --frozen-lockfile
 
-      - run: npm run build
+      - run: pnpm build
 
       - name: Cypress E2E
         uses: cypress-io/github-action@v6
         with:
-          start: npm start
+          install: false
+          start: pnpm start
           wait-on: http://localhost:3000
