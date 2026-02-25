@@ -7,7 +7,7 @@ on:
     branches: [main]
 
 env:
-  NEXT_PUBLIC_SITE_NAME: Portfolio e.g
+  NEXT_PUBLIC_SITE_NAME: Port Xample
 
 jobs:
   quality:

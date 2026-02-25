@@ -1,6 +1,6 @@
 import type { Feature, Stat, Testimonial } from '@/types';
 
-export const SITE_NAME = process.env.NEXT_PUBLIC_SITE_NAME ?? 'Portfolio e.g';
+export const SITE_NAME = process.env.NEXT_PUBLIC_SITE_NAME ?? 'Port Xample';
 
 export const FORM_STATUS = {
   IDLE: 'idle',
