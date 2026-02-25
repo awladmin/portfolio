@@ -87,12 +87,12 @@ export function ContactForm() {
           {status === FORM_STATUS.SUBMITTING ? 'Sending...' : 'Send Message'}
         </Button>
         {status === FORM_STATUS.SUCCESS && (
-          <p className="text-green-600 dark:text-green-400 text-sm text-center" role="status">
+          <p className="text-green-600 text-sm text-center" role="status">
             Message sent successfully. We will be in touch.
           </p>
         )}
         {status === FORM_STATUS.ERROR && (
-          <p className="text-red-600 dark:text-red-400 text-sm text-center" role="alert">
+          <p className="text-red-600 text-sm text-center" role="alert">
             Something went wrong. Please try again.
           </p>
         )}

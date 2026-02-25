@@ -8,8 +8,8 @@ export function Stats() {
       <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
         {STATS.map((stat) => (
           <div key={stat.id}>
-            <p className="text-4xl font-bold text-slate-900 dark:text-white">{stat.value}</p>
-            <p className="mt-2 text-sm text-slate-600 dark:text-slate-400 uppercase tracking-wide">
+            <p className="text-4xl font-bold text-slate-900">{stat.value}</p>
+            <p className="mt-2 text-sm text-slate-600 uppercase tracking-wide">
               {stat.label}
             </p>
           </div>
