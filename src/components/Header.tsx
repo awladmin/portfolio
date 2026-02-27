@@ -1,6 +1,6 @@
 import { SITE_NAME, NAV_LINKS } from '@/lib/constants';
 
-export function Header() {
+export const Header = () => {
   return (
     <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/80 backdrop-blur-sm">
       <div className="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
@@ -21,4 +21,4 @@ export function Header() {
       </div>
     </header>
   );
-}
+};

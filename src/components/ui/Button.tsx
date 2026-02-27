@@ -13,15 +13,15 @@ const variantStyles: Record<ButtonVariant, string> = {
     'bg-white text-slate-900 border border-slate-300 hover:bg-slate-50',
 };
 
-export function Button({
+export const Button = ({
   variant = 'primary',
   className = '',
   ...props
-}: ButtonProps) {
+}: ButtonProps) => {
   return (
     <button
       className={`px-6 py-3 rounded-lg font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed ${variantStyles[variant]} ${className}`}
       {...props}
     />
   );
-}
+};

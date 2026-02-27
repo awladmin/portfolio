@@ -3,9 +3,9 @@ import type { NextRequest } from 'next/server';
 import { contactFormSchema } from '@/features/contact-form/schema';
 import type { ApiResponse } from '@/types';
 
-export async function POST(
+export const POST = async (
   request: NextRequest,
-): Promise<NextResponse<ApiResponse>> {
+): Promise<NextResponse<ApiResponse>> => {
   try {
     const body = await request.json();
     await contactFormSchema.validate(body);
@@ -20,4 +20,4 @@ export async function POST(
       { status: 400 },
     );
   }
-}
+};

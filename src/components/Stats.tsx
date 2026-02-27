@@ -1,7 +1,7 @@
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { STATS } from '@/lib/constants';
 
-export function Stats() {
+export const Stats = () => {
   return (
     <section id="stats" className="py-20 px-6">
       <SectionHeading title="By the Numbers" />
@@ -17,4 +17,4 @@ export function Stats() {
       </div>
     </section>
   );
-}
+};

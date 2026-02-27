@@ -3,7 +3,7 @@ type SectionHeadingProps = {
   subtitle?: string;
 };
 
-export function SectionHeading({ title, subtitle }: SectionHeadingProps) {
+export const SectionHeading = ({ title, subtitle }: SectionHeadingProps) => {
   return (
     <div className="text-center mb-12">
       <h2 className="text-3xl font-bold text-slate-900">{title}</h2>
@@ -12,4 +12,4 @@ export function SectionHeading({ title, subtitle }: SectionHeadingProps) {
       )}
     </div>
   );
-}
+};

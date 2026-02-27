@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 import { revalidatePath, revalidateTag } from 'next/cache';
 
-export async function POST(request: NextRequest) {
+export const POST = async (request: NextRequest) => {
   const apiKey = request.headers.get('x-api-key');
 
   if (!apiKey || apiKey !== process.env.REVALIDATE_API_KEY) {
@@ -35,4 +35,4 @@ export async function POST(request: NextRequest) {
   }
 
   return NextResponse.json({ success: true, revalidated });
-}
+};

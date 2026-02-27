@@ -15,7 +15,7 @@ const QUALITY_GATES = [
   'pnpm e2e',
 ];
 
-export function Engineering() {
+export const Engineering = () => {
   return (
     <section id="engineering" className="py-20 px-6 bg-white">
       <SectionHeading
@@ -82,4 +82,4 @@ export function Engineering() {
       </div>
     </section>
   );
-}
+};

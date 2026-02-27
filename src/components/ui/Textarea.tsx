@@ -7,7 +7,7 @@ type TextareaProps = TextareaHTMLAttributes<HTMLTextAreaElement> & {
 };
 
 export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
-  function Textarea({ label, error, id, ...props }, ref) {
+  ({ label, error, id, ...props }, ref) => {
     return (
       <div className="flex flex-col gap-1.5">
         <label htmlFor={id} className="text-sm font-medium text-slate-700">
@@ -30,3 +30,5 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
     );
   },
 );
+
+Textarea.displayName = 'Textarea';

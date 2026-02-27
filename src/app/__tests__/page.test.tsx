@@ -1,6 +1,14 @@
 import { render, screen } from '@testing-library/react';
 import Home from '@/app/page';
 
+vi.mock('@/components/RepoInsights', () => ({
+  RepoInsights: () => (
+    <section id="repo">
+      <h2>Repo Insights</h2>
+    </section>
+  ),
+}));
+
 describe('Home Page', () => {
   it('renders the hero section with heading', () => {
     render(<Home />);
@@ -18,6 +26,13 @@ describe('Home Page', () => {
     render(<Home />);
     expect(
       screen.getByRole('heading', { name: 'How This Portfolio Is Built' }),
+    ).toBeInTheDocument();
+  });
+
+  it('renders the repo insights section', () => {
+    render(<Home />);
+    expect(
+      screen.getByRole('heading', { name: 'Repo Insights' }),
     ).toBeInTheDocument();
   });
 

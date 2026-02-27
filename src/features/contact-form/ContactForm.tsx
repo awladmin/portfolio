@@ -12,7 +12,7 @@ import type { FormStatus } from '@/lib/constants';
 import type { ContactFormValues } from './types';
 import { contactFormSchema } from './schema';
 
-export function ContactForm() {
+export const ContactForm = () => {
   const [status, setStatus] = useState<FormStatus>(FORM_STATUS.IDLE);
 
   const {
@@ -99,4 +99,4 @@ export function ContactForm() {
       </form>
     </section>
   );
-}
+};

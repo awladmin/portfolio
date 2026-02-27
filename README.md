@@ -1,6 +1,6 @@
 # Portfolio
 
-Built by **Danny Jordan**, with AI-assisted development via Claude Code.
+Built by **Danny Jordan**, with AI-assisted development via Claude Code and Codex.
 
 A production-style single-page application built with Next.js 15, React 19, and TypeScript. Demonstrates modern frontend engineering practices including strong typing, automated testing, CI/CD pipelines, and clean project structure.
 
@@ -122,6 +122,14 @@ The homepage includes a dedicated "How This Portfolio Is Built" section that hig
 - Storybook usage for component documentation
 - Testing coverage strategy and API route implementation
 
+### Repo Insights
+
+A dedicated "Repo Insights" section surfaces live GitHub repository metrics from a Next.js API route:
+
+- Stars, forks, watchers, and open issues
+- Default branch, primary language, and last push date
+- Direct links to pull requests, actions runs, issues, and commit history
+
 ### SEO
 
 The layout includes comprehensive metadata: Open Graph, Twitter Cards, a canonical URL via `metadataBase`, and JSON-LD structured data (`WebSite` + `Person`). The theme color is set for mobile browsers.
@@ -192,7 +200,7 @@ No extra configuration needed. The default Next.js build settings work out of th
 
 ## AI-Assisted Development
 
-This project was scaffolded with the help of AI tooling. Here is where AI fits into a workflow like this and where it actually helps:
+This project was scaffolded with the help of AI tooling (Claude Code + Codex). Here is where AI fits into a workflow like this and where it actually helps:
 
 - **Scaffolding** - generating boilerplate for components, test files, and config. Saves time on repetitive setup without losing consistency.
 - **Test drafting** - AI can produce solid initial test cases for common scenarios. You still review for correctness and add edge cases that need domain knowledge.
@@ -213,4 +221,4 @@ AI is a productivity tool, not a replacement for engineering judgment. The devel
 
 ---
 
-Built by **Danny Jordan** | AI-assisted with [Claude Code](https://claude.ai)
+Built by **Danny Jordan** | AI-assisted with [Claude Code](https://claude.ai) and Codex

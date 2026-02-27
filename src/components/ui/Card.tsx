@@ -5,7 +5,7 @@ type CardProps = {
   className?: string;
 };
 
-export function Card({ children, className = '' }: CardProps) {
+export const Card = ({ children, className = '' }: CardProps) => {
   return (
     <div
       className={`bg-white rounded-xl border border-slate-200 p-6 ${className}`}
@@ -13,4 +13,4 @@ export function Card({ children, className = '' }: CardProps) {
       {children}
     </div>
   );
-}
+};

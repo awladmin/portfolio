@@ -2,7 +2,7 @@ import { Card } from '@/components/ui/Card';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { FEATURES } from '@/lib/constants';
 
-export function Features() {
+export const Features = () => {
   return (
     <section id="features" className="py-20 px-6 bg-slate-50">
       <SectionHeading
@@ -22,4 +22,4 @@ export function Features() {
       </div>
     </section>
   );
-}
+};

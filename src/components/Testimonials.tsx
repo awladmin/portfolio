@@ -2,7 +2,7 @@ import { Card } from '@/components/ui/Card';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { TESTIMONIALS } from '@/lib/constants';
 
-export function Testimonials() {
+export const Testimonials = () => {
   return (
     <section id="testimonials" className="py-20 px-6 bg-slate-50">
       <SectionHeading title="What People Are Saying" />
@@ -23,4 +23,4 @@ export function Testimonials() {
       </div>
     </section>
   );
-}
+};

@@ -1,6 +1,6 @@
 import { SITE_NAME } from '@/lib/constants';
 
-export function Hero() {
+export const Hero = () => {
   return (
     <section className="py-24 px-6 text-center">
       <h1 className="text-5xl font-bold text-slate-900 tracking-tight">
@@ -26,4 +26,4 @@ export function Hero() {
       </div>
     </section>
   );
-}
+};
