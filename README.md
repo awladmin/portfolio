@@ -113,9 +113,14 @@ curl -X POST http://localhost:3000/api/revalidate \
 
 ## Features
 
-### Dark Mode
+### Engineering Showcase
 
-Dark mode is supported via a `ThemeProvider` that reads from `localStorage` and falls back to `prefers-color-scheme`. An inline script in `<head>` sets the `dark` class before first paint to prevent a flash of unstyled content. A toggle button is fixed to the top-right corner.
+The homepage includes a dedicated "How This Portfolio Is Built" section that highlights:
+
+- Core stack and framework choices
+- Quality gates enforced locally and in CI
+- Storybook usage for component documentation
+- Testing coverage strategy and API route implementation
 
 ### SEO
 

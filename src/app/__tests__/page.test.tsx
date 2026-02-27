@@ -14,6 +14,13 @@ describe('Home Page', () => {
     ).toBeInTheDocument();
   });
 
+  it('renders the engineering section', () => {
+    render(<Home />);
+    expect(
+      screen.getByRole('heading', { name: 'How This Portfolio Is Built' }),
+    ).toBeInTheDocument();
+  });
+
   it('renders the stats section', () => {
     render(<Home />);
     expect(

@@ -60,6 +60,7 @@ export const TESTIMONIALS: Testimonial[] = [
 ];
 
 export const NAV_LINKS = [
+  { href: '#engineering', label: 'Engineering' },
   { href: '#features', label: 'Features' },
   { href: '#stats', label: 'Stats' },
   { href: '#testimonials', label: 'Testimonials' },
